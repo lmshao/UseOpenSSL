@@ -3,7 +3,7 @@ LD = g++
 SRCS = $(wildcard *.cpp)
 OBJS = $(patsubst %.cpp, %.o, $(SRCS))
 
-CFLAGS = -Wall -O2
+CPPFLAGS = -Wall -O2 -Wno-c++11-extensions -Wno-c++11-long-long
 INCLUDE = -I./include
 
 OS = $(shell uname -s | tr [A-Z] [a-z])
@@ -21,7 +21,7 @@ TARGET = UseOpenSSL
 
 .PHONY:all clean
 
-all: $(TARGET)
+all: clean $(TARGET)
 
 $(TARGET): $(OBJS)
 	$(LD) -o $@ $^ $(LIB)
@@ -29,7 +29,7 @@ $(TARGET): $(OBJS)
 
 %.o:%.cpp
 	@echo "\033[32m\033[1A"
-	$(CC) -c $^ $(INCLUDE) $(CFLAGS)
+	$(CC) -c $^ $(INCLUDE) $(CPPFLAGS)
 
 clean:
 	@echo "\033[32m\033[1A"

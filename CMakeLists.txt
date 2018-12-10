@@ -9,6 +9,6 @@ LINK_DIRECTORIES(libs/mac) # or libs/linux
 
 LINK_LIBRARIES(ssl crypto)
 
-SET(SRC main.cpp)
+SET(SRC main.cpp hash.cpp hash.h)
 
 ADD_EXECUTABLE(UseOpenSSL ${SRC})

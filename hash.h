@@ -6,14 +6,15 @@
 #define USEOPENSSL_HASH_H
 
 #include <string>
+#include <vector>
 
-std::string md5(const unsigned char *in,  int len);
+std::string md5(std::vector<unsigned char> in);
 
-std::string sha1(const unsigned char *in, int len);
+std::string sha1(std::vector<unsigned char> in);
 
-std::string sha256(const unsigned char *in, int len);
+std::string sha256(std::vector<unsigned char> in);
 
-std::string sha512(const unsigned char *in, int len);
+std::string sha512(std::vector<unsigned char> in);
 
 
 #endif //USEOPENSSL_HASH_H

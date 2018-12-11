@@ -11,7 +11,7 @@
 #include "openssl/md5.h"
 #include "openssl/sha.h"
 
-std::string md5(std::vector<unsigned char> in) {
+std::string md5(const std::vector<unsigned char> &in) {
     unsigned char md[MD5_DIGEST_LENGTH];
     std::string digest, tmp;
     std::stringstream ss;
@@ -30,7 +30,7 @@ std::string md5(std::vector<unsigned char> in) {
     return digest;
 }
 
-std::string sha1(std::vector<unsigned char> in) {
+std::string sha1(const std::vector<unsigned char> &in) {
     unsigned char md[SHA_DIGEST_LENGTH];
     std::string digest, tmp;
     std::stringstream ss;
@@ -49,7 +49,7 @@ std::string sha1(std::vector<unsigned char> in) {
     return digest;
 }
 
-std::string sha256(std::vector<unsigned char> in) {
+std::string sha256(const std::vector<unsigned char> &in) {
     unsigned char md[SHA256_DIGEST_LENGTH];
     std::string digest, tmp;
     std::stringstream ss;
@@ -68,7 +68,7 @@ std::string sha256(std::vector<unsigned char> in) {
     return digest;
 }
 
-std::string sha512(std::vector<unsigned char> in) {
+std::string sha512(const std::vector<unsigned char> &in) {
     unsigned char md[SHA512_DIGEST_LENGTH];
     std::string digest, tmp;
     std::stringstream ss;

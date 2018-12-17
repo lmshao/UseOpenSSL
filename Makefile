@@ -3,7 +3,7 @@ LD = g++
 SRCS = $(wildcard *.cpp)
 OBJS = $(patsubst %.cpp, %.o, $(SRCS))
 
-CPPFLAGS = -Wall -O2 -Wno-c++11-extensions -Wno-c++11-long-long
+CPPFLAGS = -Wall -O2 -std=c++11 -Wno-c++11-extensions -Wno-c++11-long-long
 INCLUDE = -I./include
 
 OS = $(shell uname -s | tr [A-Z] [a-z])

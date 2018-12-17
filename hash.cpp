@@ -7,6 +7,7 @@
 
 #include <sstream>
 #include <iostream>
+#include <iomanip>
 
 #include "openssl/md5.h"
 #include "openssl/sha.h"
@@ -22,7 +23,7 @@ std::string md5(const std::vector<unsigned char> &in) {
     }
 
     for (unsigned char c : md) {
-        ss << std::hex << (int) c << std::endl;
+        ss << std::setfill('0') << std::setw(2) << std::hex << (int) c << std::endl;
         ss >> tmp;
         digest += tmp;
     }
@@ -41,7 +42,7 @@ std::string sha1(const std::vector<unsigned char> &in) {
     }
 
     for (unsigned char c : md) {
-        ss << std::hex << (int) c << std::endl;
+        ss << std::setfill('0') << std::setw(2) << std::hex << (int) c << std::endl;
         ss >> tmp;
         digest += tmp;
     }
@@ -60,7 +61,7 @@ std::string sha256(const std::vector<unsigned char> &in) {
     }
 
     for (unsigned char c : md) {
-        ss << std::hex << (int) c << std::endl;
+        ss << std::setfill('0') << std::setw(2) << std::hex << (int) c << std::endl;
         ss >> tmp;
         digest += tmp;
     }
@@ -79,7 +80,7 @@ std::string sha512(const std::vector<unsigned char> &in) {
     }
 
     for (unsigned char c : md) {
-        ss << std::hex << (int) c << std::endl;
+        ss << std::setfill('0') << std::setw(2) << std::hex << (int) c << std::endl;
         ss >> tmp;
         digest += tmp;
     }
